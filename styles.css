@@ -1,0 +1,120 @@
+:root {
+    --cor-principal: #ff85ff;
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-secundaria: #b89cd5;
+    --cor-hover: #00ff88;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: "Chakra Petch", sans-serif;
+    padding-bottom: 100px;
+}
+
+header {
+    background: #111;
+    border-bottom: 2px solid var(--cor-principal);
+    padding: 20px;
+    font-size: 36px;
+    text-align: center;
+    color: var(--cor-principal);
+    box-shadow: 0 2px 10px var(--cor-principal);
+}
+
+.chamada {
+    background: var(--cor-secundaria);
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.chamada-texto h1 {
+    font-size: 42px;
+    color: black;
+    text-shadow: 1px 1px 5px #fff;
+}
+
+.chamada-texto p {
+    font-size: 22px;
+    color: black;
+    margin-top: 10px;
+}
+
+iframe {
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
+    max-width: 100%;
+}
+
+.categoria {
+    padding: 40px 20px;
+}
+
+.categoria h2 {
+    font-size: 28px;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.categoria-videos img {
+    height: 200px;
+    border-radius: 12px;
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease, border 0.3s ease;
+    scroll-snap-align: center;
+    border: 2px solid transparent;
+}
+
+.categoria-videos img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+    border: 2px solid var(--cor-hover);
+    cursor: pointer;
+    box-shadow: 0 0 12px var(--cor-hover);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .chamada {
+        flex-direction: column;
+        padding: 40px 10px;
+    }
+
+    .chamada-texto h1 {
+        font-size: 32px;
+    }
+
+    .chamada-texto p {
+        font-size: 18px;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .categoria-videos img {
+        height: 160px;
+    }
+}
